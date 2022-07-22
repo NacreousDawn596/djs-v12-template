@@ -24,11 +24,11 @@ client.on("message", msg => {
 		msg.channel.startTyping();
 		waifu_commands_past = "neko shinobu megumin bullied cuddled cried hugged awoo kissed licked pat smugged bonked yeeted blushed smiled waved highfived handhold nomed bit glomped slapped killed kicked happy winked poke danced cringed"
 		waifu_commands = "neko shinobu megumin bully cuddle cry hug awoo kiss lick pat smug bonk yeet blush smile wave highfive handhold nom bite glomp slap kill kick happy wink poke dance cringe"
-                if (waifu_commands.split(' ').indexOf(msg.content.toLowerCase().replace("& ", "").split(' ')[0].replace("&", "")) >= 0){
-                        command = msg.content.toLowerCase().replace("& ", "").split(' ')[0].replace("&", "")
-                        action = waifu_commands_past.split(' ')[waifu_commands.split(' ').indexOf(msg.content.toLowerCase().replace("& ", "").split(' ')[0].replace("&", ""))]
-                        url = APIURL + "sfw/" + msg.content.toLowerCase().replace("& ", "").split(' ')[0].replace("&", "")
-			console.log(APIURL + "sfw/" + msg.content.toLowerCase().replace("& ", "").split(' ')[0].replace("&", ""))
+                if (waifu_commands.split(' ').indexOf(msg.content.toLowerCase().replace(prefix, "")) >= 0){
+                        command = msg.content.toLowerCase().replace(prefix, "")
+                        action = waifu_commands_past.split(' ')[waifu_commands.split(' ').indexOf(msg.content.toLowerCase().replace(prefix, ""))]
+                        url = APIURL + "sfw/" + msg.content.toLowerCase().replace(prefix, "")
+			console.log(APIURL + "sfw/" + msg.content.toLowerCase().replace(prefix, ""))
                         request(url.replace(' ', ''), function (error, response, body) {
                                 try{
                                         var body = JSON.parse(body)

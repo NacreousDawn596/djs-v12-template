@@ -19,7 +19,7 @@ client.on("message", msg => {
 	if (msg.author.bot){
 		msg.channel.stopTyping();
 	}
-	if(msg.content.split(" ")[0].indexOf("&") >= 0){
+	if(msg.content.split(" ")[0].indexOf(prefix) >= 0){
 		APIURL = "https://api.waifu.pics/"
 		msg.channel.startTyping();
 		waifu_commands_past = "neko shinobu megumin bullied cuddled cried hugged awoo kissed licked pat smugged bonked yeeted blushed smiled waved highfived handhold nomed bit glomped slapped killed kicked happy winked poke danced cringed"
